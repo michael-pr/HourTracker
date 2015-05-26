@@ -1,13 +1,12 @@
 <template name="activitySubmit">
 	<div class="container">
-		<form>
+		<form form="activitySubmitForm">
 			<div class="input-field">
 				<label for="activity-title">Title</label>
 				<input id="activity-title" type="text" class="validate">
 			</div>
-			<div class="input-field">
-				<label>Goal</label>
-				<select name="activity-goal">
+			<div class="input-field" style="z-index: 2;">
+				<select id="activity-goal">
 					<option value="0" selected>None</option>
 					<option value="100">100 Hours</option>
 					<option value="500">500 Hours</option>
@@ -15,6 +14,7 @@
 					<option value="5000">5,000 Hours</option>
 					<option value="10000">10,000 Hours</option>
 				</select>
+				<label>Goal</label>
 			</div>
 			<button type="submit" class="waves-effect wave-light btn light-blue">
 				Create

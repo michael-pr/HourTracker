@@ -16,11 +16,11 @@
 
 				<ul id="slide-out" class="side-nav">
 					{{#if currentUser}}
-						<li><a href="{{ pathFor 'activityList' }}">Activity list</a></li>
-						<li><a id="logout-button" href="#">Log out</a></li>
+						<li class="{{ activeRouteClass 'activityList' }}"><a href="{{ pathFor 'activityList' }}">Activity list</a></li>
+						<li><a id="logout-button" href="#" >Log out</a></li>
 					{{else}}
-						<li><a href="{{ pathFor 'login' }}">Log in</a></li>
-						<li><a href="{{ pathFor 'register' }}">Register</a></li>
+						<li class="{{ activeRouteClass 'login' }}"><a href="{{ pathFor 'login' }}">Log in</a></li>
+						<li class="{{ activeRouteClass 'register' }}"><a href="{{ pathFor 'register' }}">Register</a></li>
 					{{/if}}
 				</ul>
 			</div>

@@ -1,5 +1,11 @@
 <template name="activityList">
 	<div class="activity-list">
+		{{#if emptyActivities}}
+			<div class="center-text">
+				<h4>You have no activities!</h4>
+				<p>Press the "+" icon to create one</p>
+			</div>
+		{{/if}}
 		{{#each activities}}
 			{{> activityItem}}
 		{{/each}}

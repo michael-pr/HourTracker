@@ -1,8 +1,9 @@
 <template name="activityItem">
-	<div class="activity-item">
-		<div class="container">
-			<h4 class="activity-item-header">{{title}}</h4>
-			<!--<p class="activity-item-progress">Progress</p>-->
+	<a href="{{ pathFor 'activityPage' }}">
+		<div class="activity-item">
+			<div class="container">
+				<h4 class="activity-item-header">{{title}}</h4>
+			</div>
 		</div>
-	</div>
+	</a>
 </template>

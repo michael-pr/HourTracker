@@ -12,7 +12,8 @@ Template.header.helpers({
 			case "activityList": return "Activities";
 			case "login": return "Log In";
 			case "register": return "Register";
-			case "activitySubmit": return "Create"
+			case "activitySubmit": return "Create";
+			case "activityPage": return this.title;
 			default: return "Hour Tracker";
 		}
 	},
@@ -24,6 +25,16 @@ Template.header.helpers({
 	},
 	backButtonActive: function () {
 		return isBackPage() ? "show-display" : "hide-display";
+	},
+	activeRouteClass: function () {
+		var args = Array.prototype.slice.call(arguments, 0);
+		args.pop();
+
+		var active = _.any(args, function (name) {
+			return Router.current() && Router.current().route.getName() === name;
+		});
+
+		return active && "active";
 	}
 });
 
@@ -48,6 +59,7 @@ Template.header.events({
 isBackPage = function () {
 	switch (Router.current().route.getName()) {
 		case "activitySubmit": return true;
+		case "activityPage": return true;
 		default: return false;
 	}
 }

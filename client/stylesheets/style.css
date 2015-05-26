@@ -47,10 +47,27 @@
 	padding: 10px 0 10px 0;
 	border-bottom: 1px solid #eee;
 }
+	.activity-item:hover {
+		color: #fff;
+		background-color: #039be5;
+	}
+	.activity-item:active {
+		color: #fff;
+		background-color: #0288d1;
+	}
 
 /* ACTIVITY SUBMIT */
 .goal-select-wrapper {
 	display: block;
+}
+
+/* LOADING */
+.spinner-container {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
 }
 
 /* GENERAL */
@@ -63,4 +80,14 @@
 
 .disable-link-cursor {
 	cursor: default;
+}
+
+.widen-button {
+	width: 100%;
+}
+
+.center-text {
+	margin-top: 20px;
+	text-align: center;
+	vertical-align: middle;
 }
