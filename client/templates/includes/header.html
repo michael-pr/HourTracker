@@ -2,10 +2,14 @@
 	<div class="navbar-fixed">
 		<nav role="navigation" class="light-blue">
 			<div class="nav-wrapper container">
-				<a href="#" class="brand-logo">{{navTitle}}</a>
-				<a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+				<a href="#" class="brand-logo disable-link-cursor">{{navTitle}}</a>
+				<a href="#" class="nav-back-button show-on-large {{backButtonActive}}">
+					<i class="mdi-navigation-chevron-left" style="font-size: 3em;"></i>
+				</a>
+				<a href="#" data-activates="slide-out" class="button-collapse show-on-large {{buttonCollapseActive}}">
 					<i class="mdi-navigation-menu"></i>
 				</a>
+		
 				{{#if onActivityList}}
 					<a href="{{ pathFor 'activitySubmit' }}" class="right"><i class="mdi-content-add" style="font-size: 3em;"></i></a>
 				{{/if}}

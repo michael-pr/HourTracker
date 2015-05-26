@@ -36,6 +36,12 @@
 	color: #000;
 }
 
+/* HEADER */
+.nav-back-button {
+	float: left;
+}
+
+
 /* ACTIVITY LIST */
 .activity-item {
 	padding: 10px 0 10px 0;
@@ -45,4 +51,16 @@
 /* ACTIVITY SUBMIT */
 .goal-select-wrapper {
 	display: block;
+}
+
+/* GENERAL */
+.hide-display {
+	display: none;
+}
+.show-display {
+	display: block;
+}
+
+.disable-link-cursor {
+	cursor: default;
 }

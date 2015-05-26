@@ -10,6 +10,8 @@ if (Activities.find().count() === 0) {
 		Activities.insert({
 			title: "Activity " + i,
 			userId: test._id,
+			goal: 1000,
+			current: 0,
 			submitted: new Date(now)
 		});
 	}

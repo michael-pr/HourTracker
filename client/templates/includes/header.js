@@ -9,20 +9,26 @@ Template.header.onRendered(function () {
 Template.header.helpers({
 	navTitle: function () {
 		switch (Router.current().route.getName()) {
-			case "activityList": return "Your Activities";
+			case "activityList": return "Activities";
 			case "login": return "Log In";
 			case "register": return "Register";
+			case "activitySubmit": return "Create"
 			default: return "Hour Tracker";
 		}
 	},
 	onActivityList: function () {
 		return Router.current().route.getName() === "activityList";
+	},
+	buttonCollapseActive: function () {
+		return isBackPage() ? "hide-display" : "show-display";
+	},
+	backButtonActive: function () {
+		return isBackPage() ? "show-display" : "hide-display";
 	}
 });
 
 Template.header.events({
 	"click #logout-button": function (e) {
-		//$(".button-collapse").sideNav("hide");
 		e.preventDefault();
 
 		Meteor.logout(function (error) {
@@ -32,5 +38,16 @@ Template.header.events({
 				Router.go("login");
 			}
 		});
+	},
+	"click .nav-back-button": function (e) {
+		e.preventDefault();
+		window.history.back();
 	}
 });
+
+isBackPage = function () {
+	switch (Router.current().route.getName()) {
+		case "activitySubmit": return true;
+		default: return false;
+	}
+}
