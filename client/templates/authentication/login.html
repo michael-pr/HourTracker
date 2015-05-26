@@ -1,19 +1,21 @@
 <template name="login">
-	<form id="login-form">
-		<div class="input-field">
-			<label for="login-email">Email</label>
-			<input id="login-email" type="email" class="validate">
-		</div>
-		<div class="input-field">
-			<label for="login-password">Password</label>
-			<input id="login-password" type="password" class="validate">
-		</div>
-		
-		<button type="submit" class="waves-effect wave-light btn light-blue">
-			Log in
-			<i class="mdi-content-send right"></i>
-		</button>
+	<div class="container">
+		<form id="login-form">
+			<div class="input-field">
+				<label for="login-email">Email</label>
+				<input id="login-email" type="email" class="validate">
+			</div>
+			<div class="input-field">
+				<label for="login-password">Password</label>
+				<input id="login-password" type="password" class="validate">
+			</div>
+			
+			<button type="submit" class="waves-effect wave-light btn light-blue">
+				Log in
+				<i class="mdi-content-send right"></i>
+			</button>
 
-		<p>Don't have an account? <a href="{{ pathFor 'register' }}">Register here</a></p>
-	</form>
+			<p>Don't have an account? <a href="{{ pathFor 'register' }}">Register here</a></p>
+		</form>
+	</div>
 </template>
