@@ -1,0 +1,20 @@
+<template name="header">
+	<nav role="navigation" class="light-blue">
+		<div class="nav-wrapper container">
+			<a href="#" class="brand-logo">{{navTitle}}</a>
+			<a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+				<i class="mdi-navigation-menu"></i>
+			</a>
+
+			<ul id="slide-out" class="side-nav">
+				{{#if currentUser}}
+					<li><a href="{{ pathFor 'activityList' }}">Activity list</a></li>
+					<li><a id="logout-button" href="#">Log out</a></li>
+				{{else}}
+					<li><a href="{{ pathFor 'login' }}">Log in</a></li>
+					<li><a href="{{ pathFor 'register' }}">Register</a></li>
+				{{/if}}
+			</ul>
+		</div>
+	</nav>
+</template>
