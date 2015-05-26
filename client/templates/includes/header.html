@@ -5,6 +5,9 @@
 			<a href="#" data-activates="slide-out" class="button-collapse show-on-large">
 				<i class="mdi-navigation-menu"></i>
 			</a>
+			{{#if onActivityList}}
+				<a href="{{ pathFor 'activitySubmit' }}" class="right"><i class="mdi-content-add" style="font-size: 3em;"></i></a>
+			{{/if}}
 
 			<ul id="slide-out" class="side-nav">
 				{{#if currentUser}}

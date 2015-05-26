@@ -1,0 +1,25 @@
+<template name="activitySubmit">
+	<div class="container">
+		<form>
+			<div class="input-field">
+				<label for="activity-title">Title</label>
+				<input id="activity-title" type="text" class="validate">
+			</div>
+			<div class="input-field">
+				<label>Goal</label>
+				<select name="activity-goal">
+					<option value="0" selected>None</option>
+					<option value="100">100 Hours</option>
+					<option value="500">500 Hours</option>
+					<option value="1000">1,000 Hours</option>
+					<option value="5000">5,000 Hours</option>
+					<option value="10000">10,000 Hours</option>
+				</select>
+			</div>
+			<button type="submit" class="waves-effect wave-light btn light-blue">
+				Create
+				<i class="mdi-content-send right"></i>
+			</button>
+		</form>
+	</div>
+</template>

@@ -9,9 +9,14 @@ Template.header.onRendered(function () {
 Template.header.helpers({
 	navTitle: function () {
 		switch (Router.current().route.getName()) {
-			case "activityList": return "Hour Tracker";
+			case "activityList": return "Your Activities";
+			case "login": return "Log In";
+			case "register": return "Register";
 			default: return "Hour Tracker";
 		}
+	},
+	onActivityList: function () {
+		return Router.current().route.getName() === "activityList";
 	}
 });
 
