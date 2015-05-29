@@ -1,4 +1,10 @@
 Template.activitySubmit.onRendered(function () {
+	// TODO: Should be moved to the router level
+	if (Session.get("submit-bypass") === true) {
+		Session.set("submit-bypass", false);
+		window.history.back();
+	}
+
 	$("#activity-goal").material_select();
 });
 
@@ -18,6 +24,7 @@ Template.activitySubmit.events({
 				return;
 			}
 
+			Session.set("submit-bypass", true);
 			Router.go("activityPage", { _id: result._id });
 		});
 	}
