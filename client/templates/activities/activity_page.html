@@ -8,9 +8,13 @@
 				<h5>{{progress}}</h5>
 				<h3>Percent</h3>
 				<h5>{{percent}}</h5>
+				<div class="progress light-blue lighten-4">
+					<div class="{{percentActive}} light-blue" style="width: {{percent}}%;"></div>
+				</div>
 			</div>
-			<div class="widen-button">
-				<button id="timer-start-stop-button" type="button" class="waves-effect waves-light btn light-blue">{{startStopButtonText}}</button>
+			<div class="">
+				<button id="timer-start-stop-button" type="button" class="waves-effect waves-light btn light-blue float-left">{{startStopButtonText}}</button>
+				<button id="delete-activity-button" type="button" class="waves-effect waves-red btn white black-text float-right">Delete</button>
 			</div>
 		</div>
 	</div>

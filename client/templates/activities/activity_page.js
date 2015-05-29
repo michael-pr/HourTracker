@@ -1,4 +1,5 @@
 Session.setDefault("idle");
+//var timerState = new ReactiveVar();
 
 Template.activityPage.helpers({
 	progress: function () {
@@ -12,17 +13,15 @@ Template.activityPage.helpers({
 			return "None";
 	},
 	startStopButtonText: function () {
-		var timerState = Session.get("timer-state");
-
-		if (timerState === "idle" || timerState === undefined)
-			return "Start";
-		else
-			return "Stop";
+		return isTimerActive() ? "Stop" : "Start";
+	},
+	percentActive: function () {
+		return isTimerActive() ? "indeterminate" : "determinate";
 	}
 });
 
 Template.activityPage.events({
-	"click button": function (e) {
+	"click #timer-start-stop-button": function (e) {
 		e.preventDefault();
 
 		// TODO: timer module. Will have to create local collection to store timed value and when stop is clicked press it to the server
@@ -50,10 +49,21 @@ Template.activityPage.events({
 				console.log("Timer recorded successfully.");
 			});
 		}
+	},
+	"click #delete-activity-button": function (e) {
+		e.preventDefault();
 
+		if (confirm("Delete this activity?")) {
+			Activities.remove(this._id);
+			window.history.back();
+		}
 	}
 });
 
+isTimerActive = function () {
+	var timerState = Session.get("timer-state");
+	return !(timerState === "idle" || timerState === undefined);
+}
 /*
 
 1. Start pressed store start on the client?

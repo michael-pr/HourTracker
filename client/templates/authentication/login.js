@@ -19,8 +19,9 @@ Template.login.events({
 			$(e.target).find("#login-password").val(),
 			function (error) {
 				if (error) {
-					console.log(error);
-					alert("The email or password you entered is incorrect. Please try again.");
+					$("#login-password").val("");
+					$("#login-email").select();		
+					throwError("The email or password you entered is incorrect. Please try again.");					
 				} else {
 					Router.go("activityList");
 				}
